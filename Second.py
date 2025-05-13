@@ -148,8 +148,8 @@ print("\nЭксперты: ")
 print(perviy_expert)
 print(vtoroy_expert)
 
-student_list = [vars(perviy_student),vars(vtoroy_student)]
-lecture_list = [vars(perviy_lecturer),vars(vtoroy_lecturer)]
+student_list = [perviy_student,vtoroy_student]
+lecture_list = [perviy_lecturer,vtoroy_lecturer]
 leng_student = len(student_list)
 leng_lecture = len(lecture_list)
 # for i in range(0,leng_student):
@@ -164,7 +164,8 @@ leng_lecture = len(lecture_list)
 def ocenka_lectorov(lecture_list,kurs):
     average_grade=[]
     for lector in lecture_list:
-        average_grade.extend(lector.grades.get(kurs, []))
+        print(lector)
+        average_grade.extend(lector.grades.get(kurs,[]))
     if average_grade:
         print(f"Средняя оценка студентов по курсу {kurs}: {sum(average_grade) / len(average_grade):.1f}")
     else:
